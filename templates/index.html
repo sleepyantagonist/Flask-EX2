@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Future Value Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+
+<body>
+<div id="content">
+    <h1>Future Value Calculator</h1>
+    {% if error_message != '' %}
+        <p class="error">{{ error_message }}</p>
+    {% endif %}
+    <form action="/display" method="post">
+
+        <div id="data">
+            <label for="investment">Investment Amount:</label>
+            <input type="text" id="investment" name="investment"
+                   value="{{ investment }}"/><br/>
+
+            <label for="interest_rate">Yearly Interest Rate:</label>
+            <input type="text" id="interest_rate" name="interest_rate"
+                   value="{{ interest_rate }}"/><br/>
+
+            <label for="years">Number of Years:</label>
+            <input type="text" id="years" name="years"
+                   value="{{ years }}"/><br/>
+        </div>
+
+        <div id="buttons">
+            <label>&nbsp;</label>
+            <input type="submit" value="Calculate"/><br/>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

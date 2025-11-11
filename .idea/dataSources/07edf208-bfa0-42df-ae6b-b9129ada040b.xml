@@ -499,7 +499,7 @@
     </routine>
     <schema id="191" parent="1" name="main">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2025-11-11.15:48:34</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-11-11.16:04:05</LastIntrospectionLocalTimestamp>
     </schema>
     <argument id="192" parent="16">
       <ArgumentDirection>R</ArgumentDirection>
@@ -1590,28 +1590,87 @@
     <argument id="554" parent="190">
       <Position>1</Position>
     </argument>
-    <table id="555" parent="191" name="sqlite_master">
+    <table id="555" parent="191" name="Category"/>
+    <table id="556" parent="191" name="Product"/>
+    <table id="557" parent="191" name="sqlite_master">
       <System>1</System>
     </table>
-    <column id="556" parent="555" name="type">
+    <table id="558" parent="191" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <column id="559" parent="555" name="category_id">
+      <AutoIncrement>1</AutoIncrement>
       <Position>1</Position>
-      <StoredType>TEXT|0s</StoredType>
+      <StoredType>INTEGER|0s</StoredType>
     </column>
-    <column id="557" parent="555" name="name">
+    <column id="560" parent="555" name="name">
+      <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>TEXT|0s</StoredType>
     </column>
-    <column id="558" parent="555" name="tbl_name">
+    <key id="561" parent="555">
+      <ColNames>category_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="562" parent="556" name="product_id">
+      <AutoIncrement>1</AutoIncrement>
+      <Position>1</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="563" parent="556" name="code">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="564" parent="556" name="name">
+      <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>TEXT|0s</StoredType>
     </column>
-    <column id="559" parent="555" name="rootpage">
+    <column id="565" parent="556" name="price">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>REAL|0s</StoredType>
+    </column>
+    <column id="566" parent="556" name="category_id">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <foreign-key id="567" parent="556">
+      <ColNames>category_id</ColNames>
+      <RefColNames>category_id</RefColNames>
+      <RefTableName>Category</RefTableName>
+    </foreign-key>
+    <key id="568" parent="556">
+      <ColNames>product_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="569" parent="557" name="type">
+      <Position>1</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="570" parent="557" name="name">
+      <Position>2</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="571" parent="557" name="tbl_name">
+      <Position>3</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="572" parent="557" name="rootpage">
       <Position>4</Position>
       <StoredType>INT|0s</StoredType>
     </column>
-    <column id="560" parent="555" name="sql">
+    <column id="573" parent="557" name="sql">
       <Position>5</Position>
       <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="574" parent="558" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="575" parent="558" name="seq">
+      <Position>2</Position>
     </column>
   </database-model>
 </dataSource>

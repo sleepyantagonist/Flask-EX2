@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Future Value Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+<div id="content">
+    <h1>Future Value Calculator</h1>
+
+    <label>Investment Amount:</label>
+    <span>{{ investment }}</span><br/>
+
+    <label>Yearly Interest Rate:</label>
+    <span>{{ interest_rate }}</span><br/>
+
+    <label>Number of Years:</label>
+    <span>{{ years }}</span><br/>
+
+    <label>Future Value:</label>
+    <span>{{ value }}</span><br/>
+</div>
+</body>
+</html>

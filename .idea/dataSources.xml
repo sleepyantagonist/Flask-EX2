@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="guitarshop.sqlite" uuid="2ec088d5-7b0a-4c06-8382-c5028d383699">
+    <data-source source="LOCAL" name="guitarshop.sqlite" uuid="07edf208-bfa0-42df-ae6b-b9129ada040b">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:guitarshop.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:database/guitarshop.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
