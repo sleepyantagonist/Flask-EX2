@@ -26,7 +26,7 @@ def get_all_products_in_category(category):
             cursor = conn.cursor()
             cursor.execute('''
                 SELECT Product.code, Product.name, Product.price
-                FROM Product JOIN Category ON Product.category_id = category.id
+                FROM Product JOIN Category ON Product.category_id = Category.category_id
                 WHERE Category.name = ?
                 ''', [category])
             rows = cursor.fetchall()
