@@ -10,14 +10,67 @@ def get_all_categories():
     try:
         with get_connection() as conn:
             cursor = conn.cursor()
-            cursor.execute("""
+            cursor.execute('''
                 SELECT name FROM Category
                 ORDER BY category_id 
-                
-            """)
+            ''')
             rows = cursor.fetchall()
         except sqlite3.Error as e:
             print(f"Failed to fetch data from database: {e}")
-        return rows
+        return [rows[0] for row in rows]
 
-print(get_all_categories())
+def get_all_products_in_category(category):
+    rows = None
+    try:
+        with get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute('''
+                SELECT Product.code, Product.name, Product.price
+                FROM Product JOIN Category ON Product.category_id = category.id
+                WHERE Category.name = ?
+                ''', [category])
+            rows = cursor.fetchall()
+    except sqlite3.Error as e:
+        print(f"Failed to fetch data from database: {e}")
+    return rows
+
+def add_product(category, name, code, price):
+    rows = None
+    try:
+        with get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute('''
+                SELECT category_id FROM Category WHERE name = ?
+            ''', [category])
+            rows = cursor.fetchall()
+            if row is None:
+                raise ValueError(f"Category '{category}' does not exist")
+
+            category_id = row[0]
+
+            cursor.execute('''
+                INSERT INTO Product(category_id, name, code, price)
+                VALUES(?, ?, ?, ?)
+            ''', [category, name, code, price])
+            conn.commit()
+    except sqlite3.Error as e:
+        print(f"Failed to fetch data from database: {e}")
+    except ValueError as e:
+        print(e)
+
+def delete_product(code):
+    try:
+        with get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute('''
+                SELECT Product_id
+                FROM Product WHERE code = ?
+            ''', [code])
+            row = cursor.fetchone()
+            if row is None:
+                raise ValueError(f"Product '{code}' does not exist")
+            product_id = row[0]
+            cursor.execute('''
+                DELETE FROM Product WHERE product_id = ?
+            ''', [product_id])
+            conn.commit()
