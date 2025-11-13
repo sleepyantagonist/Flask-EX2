@@ -2,7 +2,7 @@ import sqlite3
 
 
 def reset_db():
-    with sqlite3.connect('database/guitarshop.sqlite') as conn:
+    with sqlite3.connect('guitarshop.sqlite') as conn:
         cursor = conn.cursor()
 
         cursor.executescript("""

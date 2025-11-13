@@ -1,7 +1,7 @@
 import sqlite3
 
 def get_connection():
-    conn = sqlite3.connect('database/guitarshop.sqlite')
+    conn = sqlite3.connect('../guitarshop.sqlite')
     conn.execute("PRAGMA foreign_keys = ON")
     return conn
 
