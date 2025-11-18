@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b7835fd-6603-423a-9f78-cc18929012cb" name="Changes" comment="d4">
+    <list default="true" id="8b7835fd-6603-423a-9f78-cc18929012cb" name="Changes" comment="d5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +122,8 @@
       <workItem from="1762961367045" duration="2510000" />
       <workItem from="1763047753239" duration="2343000" />
       <workItem from="1763133887298" duration="1342000" />
-      <workItem from="1763393536179" duration="1844000" />
+      <workItem from="1763393536179" duration="2035000" />
+      <workItem from="1763479391841" duration="383000" />
     </task>
     <task id="LOCAL-00001" summary="d1">
       <option name="closed" value="true" />
@@ -173,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763050196804</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="d5">
+      <option name="closed" value="true" />
+      <created>1763395853310</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1763395853310</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +192,8 @@
     <MESSAGE value="d2" />
     <MESSAGE value="d3" />
     <MESSAGE value="d4" />
-    <option name="LAST_COMMIT_MESSAGE" value="d4" />
+    <MESSAGE value="d5" />
+    <option name="LAST_COMMIT_MESSAGE" value="d5" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Flask_EX2$reset_db.coverage" NAME="reset_db Coverage Results" MODIFIED="1762876487030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
