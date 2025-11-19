@@ -21,13 +21,36 @@
             <ul class = 'nav'>
                 (% for category in category_list %)
                     <li>
-                        <a href = *?category_key
-
+                        <a href = '?category_key={{ category }}'>{{ category }}</a>
+                    </li>
+                {%  endfor %}
             </ul>
         </div>
 
         <div id="content">
-            <!-- display a table of products -->
+            <h2>{{ category_key }}<h2>
+            <table>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th> class="right">Price</th>
+                    <th> </th>
+                </tr>
+                {% for product in product_list %}
+                    <tr>
+                        <td>{{ product[0] }}</td>
+                        <td>{{ product[1] }}</td>
+                        <td> class="right">{{ product[2] }}</td>
+                        <td>
+                            <form action="/delete product" method="post" id="delete_product_form">
+                                <input type="hidden" name="category_key" value="{{ category_key }}"
+                                <input type="hidden" name="product_code" value="{{ product[0] }}">
+                                <input type="submit" value="Delete">
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
         </div>
     </div>
 
